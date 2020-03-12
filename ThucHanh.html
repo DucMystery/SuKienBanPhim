@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Kiện Bàn Phím</title>
+</head>
+<body onload="themSuKien()">
+   <img id="nobita" style="position: absolute;left: 0;top: 0" height="100px" width="100px" src="https://img.favpng.com/19/13/15/nobita-nobi-doraemon-shizuka-minamoto-nobisuke-nobi-suneo-honekawa-png-favpng-6iKnngwc6UE41GNx5Jcq4uG4U.jpg" alt="">
+   <script>
+       function diLen() {
+           let up =document.getElementById("nobita");
+              up.style.top=parseInt(up.style.top)- 5 +'px';
+       }
+       function diXuong() {
+           let down= document.getElementById("nobita");
+           down.style.top= parseInt(down.style.top)+ 5 +'px';
+       }
+       function diTrai() {
+           let left= document.getElementById("nobita");
+           left.style.left = parseInt(left.style.left)- 5 +'px';
+       }
+       function diPhai() {
+           let right = document.getElementById("nobita");
+           right.style.left= parseInt(right.style.left)+ 5 +'px';
+       }
+       function banPhim(evt) {
+           switch (evt.keyCode) {
+               case 37:
+                   diTrai();
+                   break;
+               case 39:
+                   diPhai();
+                   break;
+               case 38:
+                   diLen();
+                   break;
+               case 40:
+                   diXuong();
+                   break;
+           }
+       }
+       function themSuKien() {
+           window.addEventListener('keydown',banPhim);
+       }
+   </script>
+</body>
+</html>
